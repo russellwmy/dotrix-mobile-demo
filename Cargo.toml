@@ -1,0 +1,27 @@
+[package]
+name = "dotrix-mobile-demo"
+version = "0.1.0"
+authors = ["Russell Wong"]
+edition = "2018"
+resolver = "2"
+
+[package.metadata.cargo-apple.ios]
+frameworks = ["AudioToolbox"]
+
+[lib]
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[[bin]]
+name = "dotrix-mobile-desktop"
+path = "gen/bin/desktop.rs"
+
+[dependencies]
+mobile-entry-point = "0.1.1"
+dotrix = { git = "https://github.com/russellwmy/dotrix.git" }
+bytemuck = "1.7.3"
+
+[target.'cfg(target_os = "android")'.dependencies]
+ndk-glue = "0.2.1"
+
+[patch.crates-io]
+cpal = { git = "https://github.com/francesca64/cpal", branch = "fran-ios" }

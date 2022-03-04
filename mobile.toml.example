@@ -1,0 +1,9 @@
+[app]
+name = "dotrix-mobile-demo"
+stylized-name = "Dotrix Mobile Example"
+domain = "example.com"
+template-pack = "bevy"
+asset-dir = "./assets"
+
+[apple]
+development-team = "XCODE_TEAM_TOKEN"
